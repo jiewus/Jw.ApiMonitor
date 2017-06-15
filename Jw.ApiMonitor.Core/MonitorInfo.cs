@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.Web;
 
 namespace Jw.ApiMonitor.Core
@@ -95,11 +91,6 @@ namespace Jw.ApiMonitor.Core
             if (!string.IsNullOrEmpty(ip))
                 this.Port = int.Parse(HttpContext.Request.ServerVariables["SERVER_PORT"]);
             return ip;
-        }
-
-        public override string ToString()
-        {
-            return JsonConvert.SerializeObject(this);
         }
     }
 }
