@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jw.ApiMonitor.WebTest", "Jw.ApiMonitor.WebTest\Jw.ApiMonitor.WebTest.csproj", "{F00DD4F7-DF15-44CE-B171-50B8EBCDE8D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jw.ApiMonitor.Core", "Jw.ApiMonitor.Core\Jw.ApiMonitor.Core.csproj", "{C9277A18-9393-46A5-9D4D-B9FD6F1E0BEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jw.ApiMonitor.Console", "Jw.ApiMonitor.Console", "{971C280E-1CDC-46AA-81A8-32B9CC745DE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F00DD4F7-DF15-44CE-B171-50B8EBCDE8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00DD4F7-DF15-44CE-B171-50B8EBCDE8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00DD4F7-DF15-44CE-B171-50B8EBCDE8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00DD4F7-DF15-44CE-B171-50B8EBCDE8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9277A18-9393-46A5-9D4D-B9FD6F1E0BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9277A18-9393-46A5-9D4D-B9FD6F1E0BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9277A18-9393-46A5-9D4D-B9FD6F1E0BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9277A18-9393-46A5-9D4D-B9FD6F1E0BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

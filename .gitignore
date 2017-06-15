@@ -3,3 +3,9 @@
 ################################################################################
 
 /.svn
+/.vs
+/.vs
+/Jw.ApiMonitor.Core/obj/Debug
+/Jw.ApiMonitor.WebTest/logs/201706
+/Jw.ApiMonitor.WebTest/obj/Debug
+/packages
