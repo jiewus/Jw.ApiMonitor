@@ -9,3 +9,5 @@
 /Jw.ApiMonitor.WebTest/logs/201706
 /Jw.ApiMonitor.WebTest/obj/Debug
 /packages
+/Jw.ApiMonitor.WebTest/bin
+/Jw.ApiMonitor.Core/bin/Debug
