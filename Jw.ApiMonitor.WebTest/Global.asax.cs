@@ -9,6 +9,9 @@ using System.Web.Routing;
 using Jw.ApiMonitor.Core;
 using Jw.ApiMonitor.Core.MvcFilter;
 using Jw.ApiMonitor.Core.WebApiFilter;
+using System.Net.Http;
+using System.Net;
+using System.Net.Http.Formatting;
 
 namespace Jw.ApiMonitor.WebTest
 {
@@ -28,7 +31,11 @@ namespace Jw.ApiMonitor.WebTest
 
         public void MonitorLogHandler(MonitorInfo log)
         {
+
             NLog.LogManager.GetLogger("DefaultLog").Info(log.ToString());
+
+
         }
+
     }
 }

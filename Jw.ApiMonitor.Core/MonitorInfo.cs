@@ -84,12 +84,19 @@ namespace Jw.ApiMonitor.Core
         private string GetIpAddr()
         {
             string ip = string.Empty;
-            if (!string.IsNullOrEmpty(HttpContext.Request.ServerVariables["HTTP_VIA"]))
-                ip = Convert.ToString(HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
-            if (string.IsNullOrEmpty(ip))
-                ip = Convert.ToString(HttpContext.Request.ServerVariables["REMOTE_ADDR"]);
-            if (!string.IsNullOrEmpty(ip))
-                this.Port = int.Parse(HttpContext.Request.ServerVariables["SERVER_PORT"]);
+            try
+            {
+                if (!string.IsNullOrEmpty(HttpContext.Request.ServerVariables["HTTP_VIA"]))
+                    ip = Convert.ToString(HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
+                if (string.IsNullOrEmpty(ip))
+                    ip = Convert.ToString(HttpContext.Request.ServerVariables["REMOTE_ADDR"]);
+                if (!string.IsNullOrEmpty(ip))
+                    this.Port = int.Parse(HttpContext.Request.ServerVariables["SERVER_PORT"]);
+            }
+            catch (Exception ex)
+            {
+                Exception = ex;
+            }
             return ip;
         }
     }
