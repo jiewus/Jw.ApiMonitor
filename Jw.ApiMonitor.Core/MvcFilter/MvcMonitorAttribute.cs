@@ -32,7 +32,7 @@ namespace Jw.ApiMonitor.Core.MvcFilter
                 ActionParams = filterContext.ActionParameters,
                 ExecuteStartTime = DateTime.Now,
                 HttpRequestHeaders = filterContext.HttpContext.Request.Headers.ToString(),
-                IpAddr = filterContext.HttpContext.Request.UserHostAddress,
+                RequestIpAddr = filterContext.HttpContext.Request.UserHostAddress,
                 RequestId = Guid.NewGuid().ToString("N"),
                 HttpMethod = filterContext.HttpContext.Request.HttpMethod,
                 RequestUrl = filterContext.HttpContext.Request.RawUrl,
