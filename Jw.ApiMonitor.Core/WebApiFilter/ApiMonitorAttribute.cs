@@ -37,7 +37,8 @@ namespace Jw.ApiMonitor.Core.WebApiFilter
                 HttpRequestHeaders = actionContext.Request.Headers.ToString(),
                 IpAddr = actionContext.Request.RequestUri.Host,
                 RequestUrl = actionContext.Request.RequestUri.LocalPath,
-                RequestId = Guid.NewGuid().ToString("N")
+                RequestId = Guid.NewGuid().ToString("N"),
+                HttpContext = System.Web.HttpContext.Current
             };
             monitor.ExecuteStartTime = DateTime.Now;
             actionContext.Request.Properties[Key] = monitor;

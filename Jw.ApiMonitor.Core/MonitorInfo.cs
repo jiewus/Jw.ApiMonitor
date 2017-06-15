@@ -5,11 +5,17 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Web;
 
 namespace Jw.ApiMonitor.Core
 {
     public class MonitorInfo
     {
+        /// <summary>
+        /// 当前请求的数据上下文
+        /// </summary>
+        internal HttpContext HttpContext { get; set; }
+
         /// <summary>
         /// 当前请求过来的Id，由系统生成。如果没有的话则直接生成一个（GUID）
         /// </summary>
@@ -101,14 +107,14 @@ namespace Jw.ApiMonitor.Core
         private string GetIpAddr()
         {
             string ip = string.Empty;
-            if (!string.IsNullOrEmpty(System.Web.HttpContext.Current.Request.ServerVariables["HTTP_VIA"]))
-                ip = Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
+            if (!string.IsNullOrEmpty(HttpContext.Request.ServerVariables["HTTP_VIA"]))
+                ip = Convert.ToString(HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
             if (string.IsNullOrEmpty(ip))
-                ip = Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
+                ip = Convert.ToString(HttpContext.Request.ServerVariables["REMOTE_ADDR"]);
             return ip;
         }
 
-        public string GetLogStr()
+        public override string ToString()
         {
             return JsonConvert.SerializeObject(this);
         }

@@ -36,6 +36,7 @@ namespace Jw.ApiMonitor.Core.MvcFilter
                 RequestId = Guid.NewGuid().ToString("N"),
                 HttpMethod = filterContext.HttpContext.Request.HttpMethod,
                 RequestUrl = filterContext.HttpContext.Request.RawUrl,
+                HttpContext = System.Web.HttpContext.Current
             };
             filterContext.Controller.ViewData[Key] = monitor;
         }

@@ -28,7 +28,7 @@ namespace Jw.ApiMonitor.WebTest
 
         public void MonitorLogHandler(MonitorInfo log)
         {
-            NLog.LogManager.GetLogger("DefaultLog").Info(log.GetLogStr());
+            NLog.LogManager.GetLogger("DefaultLog").Info(log.ToString());
         }
     }
 }
