@@ -29,7 +29,12 @@ namespace Jw.ApiMonitor.Core
         /// <summary>
         /// 当前服务部署ip
         /// </summary>
-        public string DeployIpAddr => GetIpAddr();
+        public string IpAddr => GetIpAddr();
+
+        /// <summary>
+        /// 当前服务部署端口
+        /// </summary>
+        public int Port { get; set; }
 
         /// <summary>
         /// 当前请求的Url地址
@@ -39,56 +44,32 @@ namespace Jw.ApiMonitor.Core
         /// <summary>
         /// 当前请求方法执行开始时间
         /// </summary>
-        public DateTime ExecuteStartTime
-        {
-            get;
-            set;
-        }
+        public DateTime ExecuteStartTime { get; set; }
 
         /// <summary>
         /// 当前请求方法执行结束时间
         /// </summary>
-        public DateTime ExecuteEndTime
-        {
-            get;
-            set;
-        }
+        public DateTime ExecuteEndTime { get; set; }
 
         /// <summary>
         /// 请求的Action 参数
         /// </summary>
-        public IDictionary<string, object> ActionParams
-        {
-            get;
-            set;
-        }
+        public IDictionary<string, object> ActionParams { get; set; }
 
         /// <summary>
         /// Http请求头
         /// </summary>
-        public string HttpRequestHeaders
-        {
-            get;
-            set;
-        }
+        public string HttpRequestHeaders { get; set; }
 
         /// <summary>
         /// 请求方式
         /// </summary>
-        public string HttpMethod
-        {
-            get;
-            set;
-        }
+        public string HttpMethod { get; set; }
 
         /// <summary>
         /// 请求的IP地址
         /// </summary>
-        public string IpAddr
-        {
-            get;
-            set;
-        }
+        public string RequestIpAddr { get; set; }
 
         /// <summary>
         /// 当前请求的状态码
@@ -111,6 +92,8 @@ namespace Jw.ApiMonitor.Core
                 ip = Convert.ToString(HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
             if (string.IsNullOrEmpty(ip))
                 ip = Convert.ToString(HttpContext.Request.ServerVariables["REMOTE_ADDR"]);
+            if (!string.IsNullOrEmpty(ip))
+                this.Port = int.Parse(HttpContext.Request.ServerVariables["SERVER_PORT"]);
             return ip;
         }
 
