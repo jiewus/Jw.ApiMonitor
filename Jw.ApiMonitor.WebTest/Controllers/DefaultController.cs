@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Jw.ApiMonitor.Core.WebApiFilter;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using Jw.ApiMonitor.WebTest.Attribute;
 
 namespace Jw.ApiMonitor.WebTest.Controllers
 {

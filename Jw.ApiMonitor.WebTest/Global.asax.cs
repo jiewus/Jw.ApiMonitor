@@ -9,7 +9,6 @@ using System.Web.Routing;
 using Jw.ApiMonitor.Core;
 using Jw.ApiMonitor.Core.MvcFilter;
 using Jw.ApiMonitor.Core.WebApiFilter;
-using Jw.ApiMonitor.WebTest.Attribute;
 
 namespace Jw.ApiMonitor.WebTest
 {

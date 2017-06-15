@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Jw.ApiMonitor.Core.MvcFilter;
+using System;
 using System.Web.Mvc;
-using Jw.ApiMonitor.WebTest.Attribute;
 
 namespace Jw.ApiMonitor.WebTest.Controllers
 {
